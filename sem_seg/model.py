@@ -10,10 +10,8 @@ sys.path.append(os.path.join(ROOT_DIR, 'utils'))
 import tf_util
 
 def placeholder_inputs(batch_size, num_point):
-    pointclouds_pl = tf.placeholder(tf.float32,
-                                     shape=(batch_size, num_point, 9))
-    labels_pl = tf.placeholder(tf.int32,
-                                shape=(batch_size, num_point))
+    pointclouds_pl = tf.placeholder(tf.float32,shape=(batch_size, num_point, 9))
+    labels_pl = tf.placeholder(tf.int32, shape=(batch_size, num_point))
     return pointclouds_pl, labels_pl
 
 def get_model(point_cloud, is_training, bn_decay=None):
@@ -51,7 +49,7 @@ def get_model(point_cloud, is_training, bn_decay=None):
     net = tf_util.conv2d(net, 256, [1,1], padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training, scope='conv7')
     net = tf_util.dropout(net, keep_prob=0.7, is_training=is_training, scope='dp1')
-    net = tf_util.conv2d(net, 13, [1,1], padding='VALID', stride=[1,1],
+    net = tf_util.conv2d(net, 2, [1,1], padding='VALID', stride=[1,1],
                          activation_fn=None, scope='conv8')
     net = tf.squeeze(net, [2])
 
@@ -72,6 +70,5 @@ if __name__ == "__main__":
             sess.run(init)
             start = time.time()
             for i in range(100):
-                print(i)
                 sess.run(net, feed_dict={a:np.random.rand(32,4096,9)})
             print(time.time() - start)

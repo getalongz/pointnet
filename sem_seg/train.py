@@ -50,7 +50,7 @@ LOG_FOUT = open(os.path.join(LOG_DIR, 'log_train.txt'), 'w')
 LOG_FOUT.write(str(FLAGS)+'\n')
 
 MAX_NUM_POINT = 4096
-NUM_CLASSES = 13
+NUM_CLASSES = 2
 
 BN_INIT_DECAY = 0.5
 BN_DECAY_DECAY_RATE = 0.5
@@ -75,14 +75,16 @@ label_batches = np.concatenate(label_batch_list, 0)
 print(data_batches.shape)
 print(label_batches.shape)
 
-test_area = 'Area_'+str(FLAGS.test_area)
-train_idxs = []
-test_idxs = []
-for i,room_name in enumerate(room_filelist):
-    if test_area in room_name:
-        test_idxs.append(i)
-    else:
-        train_idxs.append(i)
+#test_area = 'Area_'+str(FLAGS.test_area)
+#train_idxs = []
+#test_idxs = []
+#for i,room_name in enumerate(room_filelist):
+#    if test_area in room_name:
+#        test_idxs.append(i)
+#    else:
+ #       train_idxs.append(i)
+train_idxs = np.arange(0, 650)
+test_idxs = np.arange(650, 765)
 
 train_data = data_batches[train_idxs,...]
 train_label = label_batches[train_idxs]
