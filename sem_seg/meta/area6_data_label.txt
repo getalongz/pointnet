@@ -1,3 +1,1 @@
-sem_seg/wall-windows/jiance.npy
-sem_seg/wall-windows/8.npy
-sem_seg/wall-windows/9.npy
+sem_seg/wall-windows/subjiance.npy
