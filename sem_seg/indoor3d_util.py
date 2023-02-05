@@ -11,8 +11,8 @@ sys.path.append(BASE_DIR)
 # -----------------------------------------------------------------------------
 
 DATA_PATH = os.path.join(ROOT_DIR, 'sem_seg')
-text = os.path.join(BASE_DIR, 'meta\\class_names.txt')
-g_classes = [x.rstrip() for x in open(os.path.join(BASE_DIR, 'meta\\class_names.txt'))]
+text = os.path.join(BASE_DIR, 'meta/class_names.txt')
+g_classes = [x.rstrip() for x in open(os.path.join(BASE_DIR, 'meta/class_names.txt'))]
 g_class2label = {cls: i for i,cls in enumerate(g_classes)}
 g_class2color = {'wall':	[0,255,255],
                  'windows':      [100,100,255]} 
