@@ -8,10 +8,10 @@ fold_path=BASE_DIR
 
 def clonepcd(path,i):
     #文件名
-    old_file1=path+"\\jiancewall.txt"
-    old_file2=path+"\\jiancewindows.txt"
-    new_file1=path+"\\annotations\\"+ str(i)+r"\\wall_"+str(i)+".txt"
-    new_file2=path+"\\annotations\\"+ str(i)+r"\\windows_"+ str(i)+".txt"
+    old_file1=path+"/jiancewall.txt"
+    old_file2=path+"/jiancewindows.txt"
+    new_file1=path+"/annotations/"+ str(i)+r"/wall_"+str(i)+".txt"
+    new_file2=path+"/annotations/"+ str(i)+r"/windows_"+ str(i)+".txt"
     #偏移参数
     x_offset=random.uniform(-10, 10)
     y_offset=random.uniform(-10, 10)
