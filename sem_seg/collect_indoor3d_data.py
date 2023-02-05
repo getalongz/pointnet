@@ -5,13 +5,13 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 sys.path.append(BASE_DIR)
 import indoor3d_util
 
-anno_paths = [line.rstrip() for line in open(os.path.join(BASE_DIR, 'meta\\anno_paths.txt'))]
+anno_paths = [line.rstrip() for line in open(os.path.join(BASE_DIR, 'meta/anno_paths.txt'))]
 anno_paths = [os.path.join(indoor3d_util.DATA_PATH, p) for p in anno_paths]
 
-if not os.path.exists(BASE_DIR+"\\data"):
-    os.makedirs(BASE_DIR+"\\data")
-if not os.path.exists(BASE_DIR+"\\data\\npy"):
-    os.makedirs(BASE_DIR+"\\data\\npy")
+if not os.path.exists(BASE_DIR+"/data"):
+    os.makedirs(BASE_DIR+"/data")
+if not os.path.exists(BASE_DIR+"/data/npy"):
+    os.makedirs(BASE_DIR+"/data/npy")
 
 output_folder = os.path.join(BASE_DIR, 'data') 
 if not os.path.exists(output_folder):
